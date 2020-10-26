@@ -18,7 +18,7 @@ function generatePassword(){
 
   // Prompt user for password length
   do{
-    var passLength = prompt("How long should the password be? (8-128)");
+    var passLength = prompt("How long should the password be? (8-128 characters)");
 
     //Alert if the selection is too low
     if(passLength < 8){
@@ -66,7 +66,7 @@ function generatePassword(){
     useableCharacters += "0123456789";
   }
   if (useSpecial){
-    useableCharacters += "!@#$%^&*()";
+    useableCharacters += "!#$%&'()*+,-./:;<=>?@[^_`{|}~";
   }
   //Set length of useable character string
   var useableLength = useableCharacters.length;
