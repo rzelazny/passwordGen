@@ -20,29 +20,53 @@ function generatePassword(){
   do{
     var passLength = prompt("How long should the password be? (8-128)");
 
-    //Alert that the selection is too low
+    //Alert if the selection is too low
     if(passLength < 8){
       alert("Minimum password length is 8");
     }
-    //Alert that the selection is too high
+    //Alert if the selection is too high
     if(passLength > 128){
       alert("Maximum password length is 128");
     }
-    //Alert that the selection is not a number
+    //Alert if the selection is not a number
     if(isNaN(passLength) === true){
       alert("Please select a number");
     }
-    //Alert that the selection is not an integer
+    //Alert if the selection is not an integer
     if(Math.floor(passLength) !== Number(passLength)){
       alert("Please choose an integer between 8 and 128");
     }
     // Length must be between 8-128 characters. Selection must also be an integer
-  }while (passLength < 8 || passLength > 128 || isNaN(passLength) === true || Math.floor(passLength) !== Number(passLength));
+  } while (passLength < 8 || passLength > 128 || isNaN(passLength) === true || Math.floor(passLength) !== Number(passLength));
   
-  //Prompt user for password parameters
-  var useLower = confirm("Should the password have lower case characters?");
-  var useUpper = confirm("Should the password have upper case characters?");
-  var useNumeric = confirm("Should the password have numeric characters?");
-  var useSpecial = confirm("Should the password have special characters?");
+  //Prompt user for password parameters, must choose at least one
+  do{
+    var useLower = confirm("Should the password have lowercase characters?");
+    var useUpper = confirm("Should the password have uppercase characters?");
+    var useNumeric = confirm("Should the password have numeric characters?");
+    var useSpecial = confirm("Should the password have special characters?");
+
+    //Alert if nothing has been selected
+    if(useLower === false && useUpper === false && useNumeric === false && useSpecial === false){
+      alert("Please select at least one character type")
+    }
+
+  } while (useLower === false && useUpper === false && useNumeric === false && useSpecial === false);
+
+  //Generate a list of usable characters based on user input
+  var useableCharacters = "";
+
+  if (useLower){
+    useableCharacters = "abcdefghijklmnopqrstuvwxyz"
+  }
+  if (useUpper){
+    useableCharacters = useableCharacters + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  }
+  if (useNumeric){
+    useableCharacters = useableCharacters + "0123456789"
+  }
+  if (useSpecial){
+    useableCharacters = useableCharacters + "!@#$%^&*()"
+  }
 
 }
