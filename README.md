@@ -1,5 +1,5 @@
 # passwordGen
-![password generator demo](readmeImg)
+![password generator demo](https://github.com/rzelazny/passwordGen/blob/main/readmeImg.png)
 
 ##Functionality
 
