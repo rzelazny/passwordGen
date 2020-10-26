@@ -71,14 +71,11 @@ function generatePassword(){
   //Set length of useable character string
   var useableLength = useableCharacters.length;
 
-  console.log(useableCharacters);
-  console.log(useableLength);
-
   //Generate the random password string
   var genPassword = "";
 
   for (var i = 0;i < passLength; i++){
-    genPassword += useableCharacters[Math.floor(Math.random() * Number(useableLength))];
+    genPassword += useableCharacters[Math.floor(Math.random() * useableLength)];
   }
 
   //Return the password
