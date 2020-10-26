@@ -66,8 +66,8 @@ function generatePassword(){
     useableCharacters += "0123456789";
   }
   if (useSpecial){
+    //Escape " and \ 
     useableCharacters += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    console.log(useableCharacters);
   }
   //Set length of useable character string
   var useableLength = useableCharacters.length;
