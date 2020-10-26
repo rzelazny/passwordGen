@@ -1,5 +1,5 @@
 # passwordGen
-![password generator image](https://github.com/rzelazny/readMeImg/blob/main/readmeImg.png)
+![password generator image](https://github.com/rzelazny/readMeImg/blob/main/passGen.png)
 
 ## Functionality
 
