@@ -75,12 +75,12 @@ function generatePassword(){
   console.log(useableLength);
 
   //Generate the random password string
-  var password = "";
+  var genPassword = "";
 
   for (var i = 0;i < passLength; i++){
-    password += useableCharacters[Math.floor(Math.random() * Number(useableLength))];
+    genPassword += useableCharacters[Math.floor(Math.random() * Number(useableLength))];
   }
 
   //Return the password
-   return(password);
+   return(genPassword);
 }
