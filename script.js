@@ -48,7 +48,7 @@ function generatePassword(){
 
     //Alert if nothing has been selected
     if(useLower === false && useUpper === false && useNumeric === false && useSpecial === false){
-      alert("Please select at least one character type")
+      alert("Please select at least one character type");
     }
 
   } while (useLower === false && useUpper === false && useNumeric === false && useSpecial === false);
@@ -57,16 +57,30 @@ function generatePassword(){
   var useableCharacters = "";
 
   if (useLower){
-    useableCharacters = "abcdefghijklmnopqrstuvwxyz"
+    useableCharacters += "abcdefghijklmnopqrstuvwxyz";
   }
   if (useUpper){
-    useableCharacters = useableCharacters + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    useableCharacters +=  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
   if (useNumeric){
-    useableCharacters = useableCharacters + "0123456789"
+    useableCharacters += "0123456789";
   }
   if (useSpecial){
-    useableCharacters = useableCharacters + "!@#$%^&*()"
+    useableCharacters += "!@#$%^&*()";
+  }
+  //Set length of useable character string
+  var useableLength = useableCharacters.length;
+
+  console.log(useableCharacters);
+  console.log(useableLength);
+
+  //Generate the random password string
+  var password = "";
+
+  for (var i = 0;i < passLength; i++){
+    password += useableCharacters[Math.floor(Math.random() * Number(useableLength))];
   }
 
+  //Return the password
+   return(password);
 }
