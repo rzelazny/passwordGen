@@ -1,4 +1,5 @@
 # passwordGen
+![password generator demo](readmeImg)
 
 ##Functionality
 
