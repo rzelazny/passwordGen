@@ -7,7 +7,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -19,6 +18,11 @@ function generatePassword(){
   // Prompt user for password length
   do{
     var passLength = prompt("How long should the password be? (8-128 characters)");
+
+    //if user hits cancel 
+    if(passLength === null){
+      return("Cancelled");
+    }
 
     //Alert if the selection is too low
     if(passLength < 8){
@@ -36,6 +40,7 @@ function generatePassword(){
     if(Math.floor(passLength) !== Number(passLength)){
       alert("Please choose an integer between 8 and 128");
     }
+    
     // Length must be between 8-128 characters. Selection must also be an integer
   } while (passLength < 8 || passLength > 128 || isNaN(passLength) === true || Math.floor(passLength) !== Number(passLength));
   
